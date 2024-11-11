@@ -1,0 +1,19 @@
+<header class="header">
+    <div routerLink="/home/product-list" class="logo">
+        <img src="../../assets/img-login.png" alt="Flipkart Logo">
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search for products, brands and more">
+        <button class="search-button">Search</button>
+    </div>
+    <nav class="nav-links">
+        <a routerLink="/dashboard/add-product">Dashboard</a>
+        <a routerLink="/home/product-list">Home</a>
+    </nav>
+    <div class="user-section">
+        <p style="margin: 0 !important;">{{userName}}</p>
+        <button *ngIf="!isLoggedIn" mat-raised-button routerLink="/login/signin" class="login-button">Login</button>
+        <button *ngIf="!isLoggedIn" mat-raised-button routerLink="/login/signup" class="signup-button">Sign Up</button>
+        <button mat-raised-button routerLink="/login/signin" class="login-button" (click)="logout()">Logout</button>
+    </div>
+</header>

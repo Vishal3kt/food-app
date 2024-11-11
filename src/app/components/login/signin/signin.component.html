@@ -1,0 +1,43 @@
+<div class="form-wrapper">
+    <div class="signin-card">
+        <div class="left-section">
+            <h3 class="welcome">Welcome Back!</h3>
+            <h4 class="sign">Please sign in to continue</h4>
+            <img class="img" src="../../../../assets/login-png.avif" alt="">
+        </div>
+        <div class="right-section">
+            <mat-card-content>
+                <form [formGroup]="signinForm" (ngSubmit)="adminSignin()">
+                    <mat-form-field appearance="outline" class="signin-form-field">
+                        <mat-label>Email</mat-label>
+                        <input formControlName="email" matInput type="email" placeholder="Enter your email"
+                            autocomplete="off" />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="signin-form-field">
+                        <mat-label>Password</mat-label>
+                        <input formControlName="password" matInput type="password" placeholder="Enter your password" />
+                    </mat-form-field>
+
+                    <div class="forgot-wrapper">
+                        <div class="forgot-password">
+                            <a routerLink="/login/forgot-password">Forgot Password?</a>
+                        </div>
+
+                        <p class="aggrement">By continuing, you agree to <span>Terms of Use</span> and
+                            <span>Privacy Policy.</span>
+                        </p>
+                    </div>
+
+                    <button [disabled]="signinForm.invalid" class="signIn" mat-raised-button color="primary"
+                        type="submit">
+                        Sign In
+                    </button>
+                </form>
+            </mat-card-content>
+
+            <button class="existing" mat-raised-button routerLink="/login/signup">Don't have an account? Sign
+                Up</button>
+        </div>
+    </div>
+</div>
